@@ -1,0 +1,8 @@
+# Generated reports (do not commit)
+DNS-Report_*.html
+
+# Windows / editor
+Thumbs.db
+Desktop.ini
+*.tmp
+.vscode/

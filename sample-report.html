@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>DNS Report</title>
+<style>
+  * { box-sizing:border-box; }
+  body { font-family:'Segoe UI',Arial,sans-serif; background:#f4f6f8; color:#1f2933; margin:0; padding:40px; }
+  .wrap { max-width:840px; margin:0 auto; }
+  header { background:#1f3a5f; color:#fff; padding:26px 32px; border-radius:12px; display:flex; align-items:center; justify-content:space-between; margin-bottom:22px; }
+  header h1 { margin:0; font-size:21px; letter-spacing:.5px; }
+  header .meta { font-size:13px; opacity:.85; margin-top:4px; }
+  header .firma { font-size:13px; font-weight:600; color:#c8a24b; letter-spacing:1px; text-transform:uppercase; }
+  .logo { height:40px; }
+  section.domain { margin-bottom:34px; }
+  .card { background:#fff; padding:20px 26px; border-bottom:1px solid #eceff1; }
+  .card:first-of-type { border-radius:12px 12px 0 0; }
+  .card:last-of-type { border-radius:0 0 12px 12px; border-bottom:none; }
+  .domainhead { display:flex; align-items:center; justify-content:space-between; background:#fbfcfd; border-top:3px solid #c8a24b; }
+  .dname { margin:0; font-size:20px; color:#1f3a5f; }
+  .provider { font-size:12px; color:#7b8794; }
+  .scorebox { color:#fff; padding:10px 16px; border-radius:10px; font-size:20px; font-weight:700; text-align:center; line-height:1.1; }
+  .scorebox small { display:block; font-size:10px; font-weight:400; opacity:.85; }
+  h2,h3 { color:#1f3a5f; }
+  h3 { font-size:13px; text-transform:uppercase; letter-spacing:1px; margin:0 0 10px; }
+  .sub { font-size:12px; color:#7b8794; margin:0 0 12px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  td { padding:6px 8px; border-bottom:1px solid #f0f2f4; }
+  td:first-child { color:#52606d; width:180px; }
+  .muted { color:#9aa5b1; font-style:italic; }
+  .summary { display:flex; flex-wrap:wrap; gap:8px; }
+  .summary span { padding:5px 12px; border-radius:20px; font-size:12px; font-weight:600; }
+  .ok { background:#e3f6e8; color:#1a7f37; }
+  .no { background:#fdeaea; color:#c0392b; }
+  .warn { background:#fff4e0; color:#b06f00; }
+  .pill { display:inline-block; background:#eef2f7; color:#1f3a5f; padding:2px 10px; border-radius:12px; font-size:12px; }
+  .tips { margin:0; padding-left:18px; font-size:13px; color:#52606d; }
+  .tips li { margin:4px 0; }
+  .allok { color:#1a7f37; font-size:13px; margin:0; }
+  footer { text-align:center; font-size:12px; color:#9aa5b1; margin-top:10px; }
+  @media print {
+    @page { margin: 1cm; }
+    body { background:#fff; padding:0; font-size:10pt; }
+    .wrap { max-width:100%; }
+    header { border-radius:0; padding:12px 18px; margin-bottom:10px;
+             -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    header h1 { font-size:16pt; }
+    section.domain { margin-bottom:10px; }
+    .card { border:1px solid #e5e9ec; padding:8px 14px; margin:0;
+            page-break-inside:avoid; break-inside:avoid; }
+    .card h3 { margin:0 0 6px; font-size:10pt; }
+    td { padding:3px 8px; }
+    .domainhead { page-break-after:avoid; break-after:avoid; }
+    h2, h3 { page-break-after:avoid; break-after:avoid; }
+    tr { page-break-inside:avoid; break-inside:avoid; }
+    .ok, .no, .warn, .pill, .scorebox, .domainhead, .firma {
+      -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .noprint { display:none !important; }
+    footer { margin-top:4px; font-size:8pt; }
+    .card:last-of-type { margin-bottom:0; }
+  }
+</style></head><body><div class='wrap'>
+<header><div><div class='firma'>Your Company</div>
+<h1>DNS, Email &amp; WHOIS Report</h1>
+<div class='meta'>Created on 01.09.2026 &middot; 1 domain(s) checked &middot; DNS: 1.1.1.1</div></div>
+<button class='noprint' style='background:#c8a24b;color:#fff;border:none;padding:10px 18px;border-radius:8px'>Print as PDF</button></header>
+<section class='domain'>
+<div class='card domainhead'><div><h2 class='dname'>example.ch</h2><span class='provider'>Microsoft 365</span></div>
+<div class='scorebox' style='background:#b06f00'>3 / 5<small>points</small></div></div>
+<div class='card'><h3>At a glance</h3><div class='summary'>
+<span class='ok'>OK - SPF</span><span class='no'>FEHLT - DMARC</span><span class='ok'>OK - DKIM</span><span class='ok'>DNSSEC</span><span class='warn'>Wildcard active</span></div>
+<h3 style='margin-top:16px'>Recommendations</h3><ul class='tips'><li>Set up DMARC (at least p=quarantine recommended).</li></ul></div>
+<div class='card'><h3>Domain registration (WHOIS / RDAP)</h3>
+<p class='sub'>Holder details for .ch only visible with login (data protection)</p>
+<table><tr><td>Registrar</td><td><b>not determinable</b></td></tr>
+<tr><td>Registered on</td><td>20.03.2021</td></tr><tr><td>Expires on</td><td>-</td></tr>
+<tr><td>Last changed</td><td>-</td></tr><tr><td>Status</td><td>active</td></tr>
+<tr><td>DNSSEC</td><td>active (signed)</td></tr></table></div>
+<div class='card'><h3>Website</h3><table>
+<tr><td colspan='2'>194.56.190.18 <span class='pill'>IPv4</span></td></tr>
+<tr><td>Status</td><td><b>OK (HTTP 200)</b></td></tr>
+<tr><td>SSL certificate</td><td><b>valid until 22.09.2026 (35 days)</b></td></tr></table></div>
+<div class='card'><h3>Email security</h3><table>
+<tr><td>SPF</td><td>v=spf1 ... -all &nbsp;<span class='pill'>strict (-all)</span></td></tr>
+<tr><td>DMARC</td><td><span class='muted'>not set - recommended!</span></td></tr>
+<tr><td>DKIM</td><td>active (selectors: selector1, selector2)</td></tr>
+<tr><td>Autodiscover</td><td>autodiscover.outlook.com</td></tr></table></div>
+</section><footer>Automatically generated by Your Company &middot; 01.09.2026</footer></div></body></html>
